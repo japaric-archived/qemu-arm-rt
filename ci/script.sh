@@ -5,14 +5,14 @@ main() {
 
     cargo check --target $T
 
-    cargo run --target $T --example hello
-    cargo run --target $T --example math
+    cross run --target $T --example hello
+    cross run --target $T --example math
 
     set +e
-    cargo run --target $T --example stderr
+    cross run --target $T --example stderr
     [ $? = 1 ] || exit 1
 
-    cargo run --target $T --example panic
+    cross run --target $T --example panic
     [ $? = 134 ] || exit 1
 }
 

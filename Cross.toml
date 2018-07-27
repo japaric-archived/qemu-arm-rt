@@ -1,0 +1,8 @@
+[target.thumbv6m-none-eabi]
+xargo = false
+
+[target.thumbv7m-none-eabi]
+xargo = false
+
+[target.thumbv7em-none-eabi]
+xargo = false

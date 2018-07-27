@@ -1,0 +1,10 @@
+[package]
+name = "qemu-arm-rt"
+version = "0.1.0"
+authors = ["Jorge Aparicio <jorge@japaric.io>"]
+
+[build-dependencies]
+cc = "1.0.18"
+
+[dependencies]
+unreachable = "1.0.0"

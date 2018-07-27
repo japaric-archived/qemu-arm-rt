@@ -1,0 +1,40 @@
+[target.thumbv6m-none-eabi]
+runner = "qemu-arm -cpu cortex-m3"
+rustflags = [
+  "-C", "link-arg=-Wl,-Tlink.x",
+  "-C", "link-arg=-nostartfiles",
+  "-C", "link-arg=-mthumb",
+  "-C", "link-arg=-march=armv6s-m",
+  "-C", "link-arg=-mfloat-abi=soft",
+]
+
+[target.thumbv7m-none-eabi]
+runner = "qemu-arm -cpu cortex-m3"
+rustflags = [
+  "-C", "link-arg=-Wl,-Tlink.x",
+  "-C", "link-arg=-nostartfiles",
+  "-C", "link-arg=-mthumb",
+  "-C", "link-arg=-march=armv7-m",
+  "-C", "link-arg=-mfloat-abi=soft",
+]
+
+[target.thumbv7em-none-eabi]
+runner = "qemu-arm -cpu cortex-m4"
+rustflags = [
+  "-C", "link-arg=-Wl,-Tlink.x",
+  "-C", "link-arg=-nostartfiles",
+  "-C", "link-arg=-mthumb",
+  "-C", "link-arg=-march=armv7e-m",
+  "-C", "link-arg=-mfloat-abi=soft",
+]
+
+# Doesn't appear to be properly supported in QEMU. Any FPU operation causes a SIGILL
+# [target.thumbv7em-none-eabihf]
+# runner = "qemu-arm -cpu cortex-m4"
+# rustflags = [
+#   "-C", "link-arg=-Wl,-Tlink.x",
+#   "-C", "link-arg=-nostartfiles",
+#   "-C", "link-arg=-mthumb",
+#   "-C", "link-arg=-march=armv7e-m+fp",
+#   "-C", "link-arg=-mfloat-abi=hard",
+# ]

@@ -1,33 +1,16 @@
 language: rust
+services: docker
 
 matrix:
   include:
     - env: TARGET=thumbv6m-none-eabi
       rust: nightly
-      addons:
-        apt:
-          packages:
-            - gcc-arm-none-eabi
-            - libnewlib-arm-none-eabi
-            - qemu-user
 
     - env: TARGET=thumbv7m-none-eabi
       rust: nightly
-      addons:
-        apt:
-          packages:
-            - gcc-arm-none-eabi
-            - libnewlib-arm-none-eabi
-            - qemu-user
 
     - env: TARGET=thumbv7em-none-eabi
       rust: nightly
-      addons:
-        apt:
-          packages:
-            - gcc-arm-none-eabi
-            - libnewlib-arm-none-eabi
-            - qemu-user
 
 before_install: set -e
 

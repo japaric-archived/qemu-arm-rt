@@ -3,7 +3,7 @@ set -euxo pipefail
 main() {
     local T=$TARGET
 
-    cargo check --target $T
+    cross check --target $T
 
     cross run --target $T --example hello
     cross run --target $T --example math

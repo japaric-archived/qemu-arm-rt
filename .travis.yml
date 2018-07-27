@@ -1,0 +1,51 @@
+language: rust
+
+matrix:
+  include:
+    - env: TARGET=thumbv6m-none-eabi
+      rust: nightly
+      addons:
+        apt:
+          packages:
+            - gcc-arm-none-eabi
+            - qemu-user
+
+    - env: TARGET=thumbv7m-none-eabi
+      rust: nightly
+      addons:
+        apt:
+          packages:
+            - gcc-arm-none-eabi
+            - qemu-user
+
+    - env: TARGET=thumbv7em-none-eabi
+      rust: nightly
+      addons:
+        apt:
+          packages:
+            - gcc-arm-none-eabi
+            - qemu-user
+
+before_install: set -e
+
+install:
+  - bash ci/install.sh
+
+script:
+  - bash ci/script.sh
+
+after_script: set +e
+
+cache: cargo
+
+before_cache:
+  - chmod -R a+r $HOME/.cargo;
+
+branches:
+  only:
+    - staging
+    - trying
+
+notifications:
+  email:
+    on_success: never

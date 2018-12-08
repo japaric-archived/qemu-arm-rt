@@ -1,3 +1,15 @@
+# Status
+
+This crate is an old experiment and has been archived. In general, you should
+prefer QEMU system emulation to run Cortex-M programs. Check the [embedded Rust
+book] to learn how to run Rust program on qemu-system-arm.
+
+[embedded Rust book]: https://docs.rust-embedded.org/book
+
+-- @japaric, 2018-12-08
+
+---
+
 # `qemu-arm-rt`
 
 > Minimal runtime for emulation of Cortex-M programs
